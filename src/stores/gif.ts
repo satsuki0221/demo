@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import gifApi from "../api/gif";
 
 const initialState = {
@@ -34,25 +34,9 @@ const slice = createSlice({
   }
 });
 
-// Reducer
-export default slice.reducer;
-
 export const {
   reset
 } = slice.actions
-// Async task
 
-export const gifSelector = (state: { gif: typeof initialState }) =>
-  state.gif
-// export function fetchAsync() {
-//   return async function(dispatch) {
-//     dispatch(slice.actions.fetchStart());
-
-//     try {
-//       const response = await gifApi.random();
-//       dispatch(slice.actions.fetchSucceed(response.url));
-//     } catch (err) {
-//       dispatch(slice.actions.fetchFaild(err));
-//     }
-//   };
-// }
+// Reducer
+export default slice.reducer;
