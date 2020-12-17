@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { AppDispatch } from '../stores'
-import { gifSelector, fetchAsync, reset } from "../stores/gif";
+import { AppDispatch ,RootState} from '../stores'
+import { fetchAsync, reset } from "../stores/gif";
 
 function VendingMachine() {
-  const gif = useSelector(gifSelector);
+  const gif = useSelector( (state: RootState) => state.gif);
   const {url, loading, error} = gif
   const dispatch = useDispatch<AppDispatch>();
 

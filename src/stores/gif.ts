@@ -30,6 +30,9 @@ const slice = createSlice({
     }),
       builder.addCase(fetchAsync.pending, (state, action) => {
         return { ...state, loading: true };
+      }),
+    builder.addCase(fetchAsync.rejected, (state, action) => {
+      return { ...state, loading: false, error: true };
     })
   }
 });
